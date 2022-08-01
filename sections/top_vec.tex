@@ -1,0 +1,179 @@
+
+   \frame{\sectionpage}
+ 
+    \begin{frame}
+     Machinery to build tensors in infinite dimensions.
+    \end{frame}
+    
+    \begin{frame}{Lagrangians and symplectic geometry}
+        \begin{itemize}
+        \item \(W\) symplectic vector space over \( \mathbf{k}\): Vector space with symplectic form \( \omega : W \times W \rightarrow \mathbf{k}\), (alternating, bilinear, nondegenerate). 
+        \item Let \( U \subset W\). Define the \emph{symplectic complement}:
+        \[ U^{\perp} = \{ v \in W | \omega(u,v) = 0 \; \forall \; u \in U \} \]
+        \item \( L \subset W\) is \emph{Lagrangian} if \( L^{\perp} = L \).
+        \item Polarisation \(W = V \oplus V^*\).
+        \end{itemize}
+    \end{frame}
+
+    
+    \begin{frame}{Discrete topology}
+    
+     \begin{defn}[Discrete topology]
+        Let \(X\) be a set. The \emph{discrete topology} on \(X\) is given by defining every subset as open, (and equivalently closed).
+    \end{defn}
+    
+    The discrete topology is the topology that best captures the set theoretic structure of a space. Individual points in the discrete topology define open sets.
+
+    \end{frame}    
+
+
+    \begin{frame}
+    Apply this topology to an infinite dimensional vector space \(V\), over \( \mathbf{k}\) also with the discrete topology.
+    
+    All discrete topological vector spaces look like \( \mathbf{k}^{\omega}\), where \( \omega\) is some ordinal, 
+    \[ \mathbf{k}^{\infty} = \colim_n \oplus_n \mathbf{k}\]
+    \end{frame}
+    
+    \begin{frame}{Discrete topological vector spaces}
+    
+     \begin{lem}
+        If \(V\) is a discrete topological \(\mathbf{k}\)-vector space, and \(\dim(V)>0\), then necessarily \( \mathbf{k}\) must have the discrete topology. 
+        
+        Alternatively if \(V = \{ 0\}\), then \(\mathbf{k}\) can have any topology. 
+        \end{lem} 
+    
+    From the requirement that multiplication is continuous.
+    \end{frame}
+
+    \begin{frame}{Discrete topological vector spaces}
+    
+    \begin{lem}[Properties of the discrete topology] 
+        Let \(V\) be a  discrete topological \( \mathbf{k}\)-vector space. 
+        \begin{itemize}
+            \item Convergent sequences of elements of \(V\) are eventually constant. 
+            \item \(V\) is Hausdorff.
+            \item If \( \dim(V) > 1\), then \(V\) is fully disconnected.
+        \end{itemize}
+        \end{lem}
+    \end{frame}
+
+
+
+    \begin{frame}{Why discrete topology?}
+    To describe a space, we consider functions on a space. For a discrete topological space \(X\), and any other topological space \(Y\), all functions \(f : X \rightarrow Y\) are continuous. Further they are equivalent to maps between the underlying sets.
+    
+    Also imposes strong finiteness to vectors.
+    
+    Every vector can be represented by a sequence with only finitely many non zero coefficients:
+    \[ (c_0, \dots , c_N, 0, 0, \dots)\]
+    for some finite \(N\), or 
+    \[ \sum^{N}_{i=0} c_i\, e_i \]
+    \end{frame}
+    
+ 
+
+    \begin{frame}{Tate spaces}
+        \begin{defn}[Tate space]
+            A \emph{Tate space}, \(W\), is a topological vector space (or more generally topological module) of the form
+            \(W= V \oplus U^*\), where \(V\) and \(U\) are topological vector spaces with the discrete topology.
+        \end{defn}
+    
+    The topological dual \(U^{*} \subseteq \mathrm{Hom}(U,\mathbf{k})\) naturally has locally linearly compact topology.  
+    \end{frame}
+    
+    \begin{frame}
+        When \(U = V\), then \(W\) is a \emph{strong symplectic} topological vector space, which means \(W = W^{*}\)
+        
+        Strong symplectic structure is equivalent to a choice of polarisation, we can write out Darboux coordinates, exists bases. 
+
+    \end{frame}
+
+    
+    \begin{frame}{Examples}
+       The Tate space \(W_{\text{Airy}}= V_{\text{Airy}} \oplus L_{\text{Airy}} = V_{\text{Airy}} \oplus (V_{\text{Airy}})^* \).
+        \begin{itemize}
+            \item   \(V_{\text{Airy}} \cong \mathrm{Vec}( z^{-1} \mathbf{k}[z^{-1}]dz)\),
+            \item \(L_{\text{Airy}} \cong  \mathrm{Vec}(\mathbf{k}[\![z]\!]dz)\). 
+        \end{itemize}
+        \(x^i \in V_{\text{Airy}}\) represents a meromorphic differential. 
+        
+        \(y_i \in L_{\text{Airy}}  \) represents a formal holomorphic differential (only positive powers of \(z^k\)).
+        
+        \(y_i\) are coordinates on \(V_{\text{Airy}}\) etc
+        
+    \end{frame}
+    
+    \begin{frame}{Finiteness}
+    Can pair a Laurent polynomial with a formal series, looking at the \emph{residue}, which is the \(1/z\)-term, always finite.
+    \[ \left(\frac{1}{z} + \frac{1}{z^2}\right) \left( 1 + z + z^2 + z^3 + \dots \right) = \frac{1}{z^2} + \frac{2}{z}+\dots\]
+    \end{frame}
+    
+    
+    \begin{frame}{Examples}
+             \( \Sigma \) Riemann surface with divisor \(R\) 
+            \begin{itemize}
+                \item \(V_\Sigma\) = global meromorphic differentials on \(\Sigma\) with zero A periods. 
+                \item \(L_\Sigma \) = holomorphic differentials.
+            \end{itemize}
+            \(V_\Sigma\), \(L_\Sigma\) built from \(|R|\) copies of \(V_{\text{Airy}}\), \(L_{\text{Airy}}\)
+    \end{frame}
+    
+    \begin{frame}{Doing algebraic geometry over \(W\)}
+        Let \(V\) be vector space with discrete topology. Let \(W = V \oplus V^*\).
+        \begin{itemize}
+            \item Canonical basis \(\mathcal{B}\), \(  x^i \in V\) and \( y_i \in V^*\).
+            \item Algebraic geometry on \(W\), look at a ring \( \mathbf{k}[\mathcal{B}^*]\).
+        \end{itemize}
+        \emph{Note}: \(x^i\) are coordinates on \(V^*\), 
+        \(y_i\) are coordinates on \(V\). 
+
+    \end{frame}
+
+    \begin{frame}{Algebraic analog}%%  move up to algebraic geometry over W
+    Pro/ind-infinite rings:
+    \begin{align*} 
+    \mathbf{k}[\mathcal{B}_{L^*}] &= \colim_n \mathbf{k}[x^1, \dots x^n]\\
+     \mathbf{k} [\mathcal{B}_{V^*} ] &= \lim_n \mathbf{k}[y_1, \dots y_n]
+     \end{align*}
+    Both have infinitely many variables. 
+     
+    Finite sums of \(x^{\sbt}\), bound in degree, basically polynomials:
+    \[ (x^1)^2 + (x^2), \quad  (x^{10000}) + (x^{3})^4, \] 
+    Infinite sums of \(y_{\sbt}\), but bound in degree:
+    \[ (y_1 + y_1^2 + \dots +y_1^N) + (y_2  + y_2^2) + \dots + y_{\infty}\]
+    \end{frame}
+    
+    \begin{frame}
+    Do algebraic geometry over \(W\), so look at the ring:
+    \[ \mathcal{O}(W) = \mathbf{k}[\mathcal{B}_{L^*}] \otimes_{\mathbf{k}} \mathbf{k} [\mathcal{B}_{V^*} ]\]
+    Inside this look at some ideal generated by a collection \(H_i\): 
+    \[  H_i = a_{ijk} x^j x^k + 2 b_{ij}^k x^j y_k + c_i^{jk} y_j y_k - y_i\] 
+    Note in infinite dimensions \( a_{ijk}\) must only pair with finitely many \(x^i\).
+    \end{frame}
+
+    \begin{frame}{In infinite dimensions}
+        Only finite sums of \(x^i\) allowed imposed in tensors.
+    \end{frame}
+
+    \begin{frame}{Poisson structure}
+        \emph{Poisson bracket},  \( \{ ,  \} : \mathbf{k}[\mathcal{B}^*] \times \mathbf{k}[\mathcal{B}^*] \rightarrow \mathbf{k}[\mathcal{B}^*]\). 
+        
+        Defined on basis:
+        \[ \{ x^i, y_j \} = \delta_j^i , \quad \{ x^i , x^j\} = 0, \quad \{ y_i, y_j\} = 0.\]
+    \end{frame}
+       
+    \begin{frame}{Poisson structure}
+        Symplectic from the Poisson structure:
+        \begin{itemize}
+            \item Poisson bracket defines a symplectic form \( \omega\). Let \( f \in \mathbf{k}[\mathcal{B}^*]\). Define vector field (derivation) \( X_f = \{ f, \cdot \}. \) Then \( \omega\) is chosen so
+            \[ \{ f, g\} = \omega(X_f , X_g ) \]
+        \end{itemize}
+        Now \(W\) is a symplectic vector space, and \(V^* \cong L\) is Lagrangian.
+    \end{frame}
+    
+    
+    \begin{frame}{No essential singularities}
+    Finiteness in the \(V_\Sigma\) is important. Need finite sums (no essential singularities).        
+    \end{frame}
+    
+    

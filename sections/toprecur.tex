@@ -1,0 +1,62 @@
+\frame{\sectionpage}
+
+ 
+ \begin{frame}{Topological recursion}
+    \( \Sigma \) curve  inside \(\mathbb{C}^2\), with divisor \( R \). % one dimensional scheme
+    
+    Algorithm -- recursion in two non-negative integers \(g,n\). 
+
+    Produces a collection of \emph{meromorphic}, \emph{symmetric} polydifferentials or invariants \(  \omega_{g,n}\) 
+    \[ \omega_{g,n} \in \Gamma(  \left(\Sigma - R \right)^n, \kappa_\Sigma^{\boxtimes n} )   .\] 
+    \begin{ex}
+    \[ \omega_{0,1} = 2 z_1^2 dz_1 ,\quad  \omega_{0,2} = \frac{dz_1 \, dz_2}{(z_1^2 - z_2^2) }. \]
+    \end{ex}
+    
+    Why do we care? \( \omega_{g,n}\) compute interesting numbers, string theory, enumerative geometry etc.
+    \end{frame} 
+    
+    
+    
+    \begin{frame} 
+    Initial conditions \( \omega_{0,3}\), \(\omega_{1,1}\) given.
+    \begin{defn}[Topological recursion]
+    \begin{align*}\omega_{g,n}(z_{\sbt}) =& \sum_{\alpha \in \text{Ram} } \Res_{z = \alpha}  K(z_1, z) \Big[ \omega_{g-1, n+1} (z, \sigma_\alpha(z), z_2, \dots, z_n) \\
+    + &\sum_{\substack{g_1 + g_2 = g \\ I_1 \sqcup I_2 = \{z_2\dots,z_n\} }} \omega_{g_1, \# I_1+1}(z,I_1) \, \omega_{g_2, \#I_2  +1}(\sigma(z), I_2) \Big]
+    \end{align*}
+    \( \sigma \) local involution at ramification point, \( K(z_1,z)\) recursion kernel, \( z_{\sbt} = (z_1, \dots z_n)\).
+    \end{defn} 
+    Take away: Quadratic relations in \( \omega_{g,n}\). Could it look like relations from a conic?
+    \end{frame}
+    
+    \begin{frame}
+        \begin{center}
+        \input{tikz/top_rec_tikz.tex}
+        \end{center}
+    \end{frame}
+    
+        
+    \begin{frame}
+    For \(g=0\), the diagrams look a bit like the binary trees.
+    
+    Binary tree a bit like a possible skeleton. 
+    
+    Thicken the trees out.
+    \end{frame}    
+        
+    %\begin{frame}
+    %Natural reason for the existence of the topological recursion relations?
+    %\end{frame}    
+    
+        
+    \begin{frame}{Vector space of differentials}
+    Infinite dimensional vector space \(W\) of meromorphic differentials with zero residue, \( W \subset \mathrm{Vec}(\mathbf{k}\lParen z \rParen dz) \), 
+    \vspace{1em}
+    \begin{ex}
+    \[ z\, dz, \quad \frac{dz}{z^2} \in W\]
+    \end{ex}
+    Want to use this vector space to build tensors -- the  \(\omega_{g,n} \in \text{Sym}(W)\)
+    
+    \(\omega_{g,n}\) exist because of natural geometry.
+    
+    This explained by doing algebraic geometry over \(W\), look at rings \( \text{Sym}(W) \cong \mathbf{k}[\mathcal{B}_W]\).
+    \end{frame}

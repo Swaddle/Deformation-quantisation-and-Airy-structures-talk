@@ -1,0 +1,296 @@
+\documentclass{beamer}
+\usepackage{qrcode}
+%\usepackage{sansmathfonts}
+\usepackage[T1]{fontenc}
+\usepackage{mlmodern}
+\usepackage{helvet}
+\usepackage{DejaVuSansMono}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{microtype}
+\usepackage{color}
+
+\newcommand{\Spec}{\mathrm{Spec}}
+
+
+\newtheorem{defn}{{\bfseries Defn}}[section]
+\newtheorem{thm}[defn]{{\bfseries Thm}}
+\newtheorem{lem}[defn]{{\bfseries Lem}}
+\newtheorem{prop}[defn]{Prop}
+\newtheorem{ex}[defn]{{\bfseries Ex}}
+\newtheorem{rem}[defn]{Rem}
+\newtheorem{ques}[defn]{Qstn}
+
+\newcommand{\lBrack}{[\![}
+\newcommand{\rBrack}{]\!]}
+
+
+\newcommand{\lParen}{(\!(}
+\newcommand{\rParen}{)\!)}
+
+
+
+%\renewcommand{\rmdefault}{\sfdefault}
+
+\usepackage[english]{babel}
+
+\usepackage[math]{blindtext}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{graphs,graphdrawing} 
+\usegdlibrary{trees}
+\usegdlibrary{force}
+\usegdlibrary{routing} 
+\usegdlibrary{circular}
+\usetikzlibrary{bending}
+\usepackage{graphicx}
+
+\usepackage{tikz-cd}
+
+
+
+
+
+
+
+
+
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% 
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\title{Deformation quantisation and Airy structures}
+\author{Michael Swaddle}
+\institute{University of Melbourne}
+\date{\today}
+
+
+\definecolor{mBackground}{RGB}{252,252,248}
+\definecolor{mNormal}{RGB}{36, 33, 36}
+\definecolor{mTitle}{RGB}{52,48,52}
+\definecolor{pink}{RGB}{255, 132, 255}
+\newcommand{\changeurlcolor}[1]{\hypersetup{urlcolor=#1}}       
+
+\setbeamercolor{background canvas}{bg=mBackground}
+\setbeamercolor{normal text}{fg=mNormal}
+\setbeamercolor{title}{fg=mTitle}
+\setbeamercolor{frametitle}{fg=mTitle}
+\setbeamercolor{block title}{fg=mTitle}
+
+
+
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+\newcommand{\sbt}{\sbullet[0.54]}
+
+
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{itemize item}{\color{pink}{$\sbt$}}
+
+
+
+\usepackage{scalerel,stackengine}
+\stackMath
+\newcommand\reallywidehat[1]{%
+\savestack{\tmpbox}{\stretchto{%
+  \scaleto{%
+    \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+    {\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+  }{\textheight}% 
+}{0.5ex}}%
+\stackon[1pt]{#1}{\tmpbox}%
+}
+\parskip 1ex
+\newcommand{\trightarrow}{\(\rightarrow\)}
+
+%\newcommand{\Res}[1]{\underset{#1}{\operatorname{Res}}}
+\DeclareMathOperator*{\Res}{Res} 
+
+
+
+
+\hypersetup{
+    colorlinks=true,
+    breaklinks,
+    linkcolor=pink,
+    citecolor=pink,
+    urlcolor=pink,
+    filecolor=pink
+}
+
+
+
+
+\newcommand{\setsecbg}{
+    \setbeamertemplate{background}{
+    \begin{tikzpicture}
+    \useasboundingbox  (0,0) rectangle(\the\paperwidth, \the\paperheight);
+    \fill[color=mTitle] (0,0) rectangle(\the\paperwidth, \the\paperheight) ;   
+    \end{tikzpicture}
+    }
+}    
+
+\newcommand{\setslidebg}{
+    \setbeamertemplate{background}{
+    \begin{tikzpicture}
+    \useasboundingbox  (0,0) rectangle(\the\paperwidth, \the\paperheight);
+    \fill[color=mBackground] (0,0) rectangle(\the\paperwidth, \the\paperheight);   
+    \end{tikzpicture}
+    }
+}    
+
+\newcommand{\sectionframe}{
+    \setsecbg
+    \frame{\Large  \sectionpage}
+    \setslidebg
+}
+
+\usepackage{caption}
+\captionsetup[figure]{labelfont={color=mTitle}}
+
+\DeclareMathOperator*{\colim}{colim}
+
+
+\begin{document}
+
+
+
+
+
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    
+
+    \section{Warm up}
+        
+        \include{sections/intro} 
+
+    \section{Topological recursion}
+    
+    
+        \include{sections/toprecur}
+    
+    \section{Topological vector spaces}
+        
+        \include{sections/top_vec}
+    
+    \section{Deformation quantisation}
+        \include{sections/def_quant}
+    
+    \section{Airy structures}
+        \include{sections/airy}
+
+    \section{Symplectic reduction}
+        \include{sections/sympl_red}
+    
+    \section{Symplectic reduction of \texorpdfstring{\(A_\Sigma\)}{A Sigma}}
+        \include{sections/def_curves}
+    
+    \section{Symplectic reduction of wavefunctions}      \include{sections/sympl_red_wave}
+    %\section{Deformation of curves in surfaces}
+    %    \include{sections/def_curves}
+
+    \begin{frame}{Questions?}
+        Slides available at
+        
+        \vspace{1em}
+        
+        \url{overleaf.com/read/ftcxkhmhsggn}
+        
+        \vspace{1em}
+        
+         \changeurlcolor{mNormal}\qrcode[height=1.2cm]{https://www.overleaf.com/read/ftcxkhmhsggn}
+ 
+ \end{frame}
+
+
+
+%%comments
+% picture on the board \mathbb{L} in W
+
+% remove quantisation from physics just give example
+
+% what we added 
+
+%% missing in previous work -- deformation quantisation
+
+%%  Exp [ 1/h curly S ] curly S local information, function on formal neighbourhood of B
+
+%% {I, I} \subset I coisotropic
+
+%% use words : maximal ideal <x,y>
+ 
+%% this generalises to arbitrary dimensions
+%% where x - > x^1.... , y -> y^1...
+
+
+%% trees
+
+%% repeat expansion on the tree u_0 = ......
+
+
+%% choice of topology on the vector space...
+
+%% g,n non negative integers
+
+
+%% defn tr 
+%% initial conditions
+
+%% \omega_{g,n} recursion exists due to natural geometry, find a naturual 
+
+%% lagrangian picture, need L and V, tensors in Sym(W)
+
+
+%% discrete topology 
+
+%% definition of symplectic geometry, need duals, discrete topology about duals, need a dual space, 
+
+
+%% possibly cut discussion on discrete topology/set
+
+%% possibly cut discrete topology on field
+
+%% just go to tate topology if needed
+
+%% strong symplectic, generalise finite dimensional behaviour, surjectivity, coordinates
+
+%% Delete etc
+
+%% grammar: infinitely many variables not infinite variables
+
+
+%% definite airy structure before saying what they for, give consequence -> used to define tr 
+
+%% lead in, 
+
+
+%% show H_i more than once, go to first mention of tensors, Sym(W) \cong k[B^*]
+
+
+
+%% have to be finiteness, built in finiteness, has to be in the definition
+
+%% has to be finiteness in x^i.., ensures finiteness
+
+%% formal series? show conic again when in general case u_i
+
+
+%% a_ijk x^i x^j x^k only for finite x^i 
+
+
+%% try get to symplectic reduction
+
+
+\end{document}

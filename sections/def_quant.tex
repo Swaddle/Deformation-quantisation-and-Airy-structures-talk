@@ -1,0 +1,273 @@
+\frame{\sectionpage}
+
+\begin{frame}
+How do we get the particular tensors \(\omega_{g,n}\).
+
+Answer: Deformation quantisation.
+\end{frame}
+
+
+\begin{frame}{Formal deformations}
+Let \( (X,\mathcal{O}_X)\) be a scheme over \( \mathbf{k}\).
+\vspace{1em}
+\begin{defn}[Formal deformation]
+    A formal deformation of \((X,\mathcal{O}_X)\) is a sheaf \( (\mathcal{A}_{\hslash},\star) \) of \( \mathbf{k}\lBrack \hslash \rBrack\)-flat, associative \( \mathbf{k}\lBrack \hslash \rBrack \)-algebras on \(X\) with the constraint that 
+    \begin{equation} 
+    \label{eqn:def_cons}
+    0 \rightarrow \hslash \mathcal{A}_\hslash \rightarrow  \mathcal{A}_{\hslash} \rightarrow \mathcal{O}_X  \rightarrow 0 .
+    \end{equation}
+\end{defn}
+\( \star\) is called a star product.
+
+A deformation quantisation is a formal deformation with extra constraints:
+\end{frame}
+
+\begin{frame}{Poisson bi-vectors}
+\( (X, \mathcal{O}_X)\) Poisson scheme, local coordinates \( (x^{\sbt}) \). Poisson scheme is equipped with a bi-vector.
+
+\begin{defn}[Poisson bi-vector]
+    A \emph{Poisson bi-vector} is a choice \( \Pi \in   H^0(X,\bigwedge^2 \mathcal{T}_X) \), such that for local sections \( f ,g : \mathcal{O}_X\), the Poisson bracket is computed via
+    \begin{equation}
+    \label{eqn:bi_vect}    
+    \{ f,g\} = (df \otimes_{\mathbf{k}} dg ) ( \Pi) = \sum_{i,j} \pi^{ij} \partial_i f \partial_j g.
+    \end{equation}
+    where \( \Pi =  \frac{1}{2} \pi^{ij} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j} \), and \( \pi^{ij}\) is skew-symmetric.
+    %= (df\otimes dg )(\Pi) 
+\end{defn}
+\end{frame} 
+
+\begin{frame}{Poisson bi-map}
+    Will need to package the data of the bi-vector into a slightly different shape:
+    \begin{defn}[Poisson endomorphism or bi-map]
+    Define the map \( \pi : \mathcal{O}_X \otimes_{\mathbf{k}} \mathcal{O}_X \rightarrow \mathcal{O}_X \otimes_{\mathbf{k}} \mathcal{O}_X\) to satisfy:  
+    \[  \mathrm{prod} \circ \pi (f,g) = \{ f, g\}. \]
+    \end{defn}
+    
+\end{frame}
+
+
+\begin{frame}
+    \begin{defn}[Formal Poisson structure] 
+    A \emph{formal Poisson structure}, is any extension of a {bi-vector}, by a formal power series:
+    \[ \Pi_{\hslash} =  \sum_{g=1}^{\infty} \Pi_g \hslash^{g-1} \in H^0(X,\bigwedge\nolimits^{\!2} \mathcal{T}_X)\lBrack \hslash \rBrack , \]
+    where \(\Pi_1 = \Pi\), such that 
+    \( \Pi_{\hslash} \) is a Poisson structure on \( \mathcal{O}_X \lBrack \hslash \rBrack \).
+    \end{defn}
+\end{frame}
+
+
+
+\begin{frame}
+        There is the question of what formal Poisson structures correspond to a formal deformation of a Poisson scheme. For example, does a formal Poisson structure correspond to a star product. The next section we give one particular answer to this, in terms of a special star product constructed as an exponential.
+
+\end{frame}
+
+
+\begin{frame}{Moyal product}
+
+A star product that gives a deformation quantisation:
+\begin{defn}[Moyal product]
+    Moyal product \( \star\) 
+    \[  f \star g = f \cdot g + \frac{1}{2} \hslash \, \pi^{ij} \frac{\partial f}{\partial x_i} \cdot  \frac{\partial g}{\partial x_j} + \frac{\hslash^2}{4} \pi^{ij} \pi^{kl}\frac{\partial f}{\partial x_i \partial x_k} \cdot \frac{\partial g}{\partial  x_j \partial x_l} + \mathcal{O}(\hslash^3),\] 
+\end{defn}
+    Satisfies
+    \[ f \star g - g \star f = \hslash \{ f, g\} + O(\hslash^2)\]
+
+\end{frame}
+
+\begin{frame}{Deformation of a sheaf}
+\( \mathcal{F} \) sheaf of \( \mathcal{O}_X\) modules, 
+\begin{defn}
+\( \mathcal{F}_{\hslash}\) sheaf of associative, flat over \( \mathbf{k}\lBrack \hslash \rBrack\), 
+\[0 \rightarrow \hslash \mathcal{F}_{\hslash} \rightarrow \mathcal{F}_{\hslash} \rightarrow \mathcal{F} \rightarrow 0\]
+\end{defn}
+Flatness gives strong constraints
+\end{frame}
+
+\begin{frame}{Obstructions}
+    Require flatness. For \( \mathcal{F}_\hslash \) to exist, \( \mathcal{F}\) must be coisotropic.
+    
+    Suppose \( \mathcal{F}\) defined by an ideal 
+    \[ 0 \rightarrow \mathcal{J} \rightarrow \mathcal{O}_X \rightarrow \mathcal{F} \rightarrow 0 \]
+    Requirement that \[ \{ \mathcal{J}, \mathcal{J} \} \subseteq  \mathcal{J}. \]
+    For example the conic 
+    \[ \mathbf{k}[x,y] / \langle -y + x^2 + 2 x y + y^2 \rangle \]
+    is coisotropic
+    \[ \{ -y + x^2 + 2 x y + y^2, -y + x^2 + 2 x y + y^2 \} = 0\]
+    More generally for a collection \(H_i\)
+    \[ \{ H_i, H_j \} = g_{ij}^k H_k\]
+\end{frame}
+
+\begin{frame}{Obstructions}
+
+    We originally stated this in terms of torsion: 
+    
+    \begin{thm} \label{thm:torsionfree}   
+    Suppose the sheaf \( \mathcal{F}_{\hslash}\) of \(\mathcal{A}_{\hslash} \)-modules is defined by an ideal sheaf \( \mathcal{J}_{\hslash} \):
+    \[ 0 \rightarrow \mathcal{J}_{\hslash} \rightarrow \mathcal{A}_\hslash \rightarrow \mathcal{F}_{\hslash} \rightarrow 0. \]
+    For this quotient to restrict to the sequence for \( \mathcal{F}\), modulo \( \hslash\), and \( \mathcal{F}_{\hslash}\) is \(\hslash\)-torsion free, then the support of \( \mathcal{F}\) in \(X\) must be coisotropic (involutive or closed under the Poisson bracket).
+    \end{thm}
+
+\end{frame}
+
+
+\begin{frame}{Deformation quantisation of the conic}
+    Back to the conic example: 
+    \[ \langle H \rangle = \langle -y + x^2 + 2 \,x \,y + y^2 \rangle \] 
+    Replace product of polynomials with Moyal product
+    \[ \mathbf{k}[x,y] \rightarrow ( \mathbf{k}[x,y] \lBrack \hslash \rBrack, \star ) \]
+    
+    Poisson bracket \[ \{y,x\}=  (dx\otimes dy) ( \Pi) = \pi_{ij} \,\partial_i x \, \partial_j y = 1, \] 
+    Moyal product on generators:
+    \[ x \star x = x^2 , \quad  x \star y = x y - \frac{1}{2} \hslash , \quad y \star y = y^2, \quad y \star x = x y + \frac{1}{2}\hslash, \]
+
+\end{frame}
+
+    
+\begin{frame}
+    Study \(\mathbf{k}[x,y] \lBrack \hslash \rBrack\)-modules, under quotient map by \(\hslash\), give  \(\mathbf{k}[x,y]\)-module \[E =\mathbf{k}[x,y]/ \mathbf{k}[x,y] H   . \] 
+    Consider elements of \( \mathbf{k}[x,y]\lBrack\hslash\rBrack\), of the form \(H - \hslash J\). 
+    Modules of interest are
+    \begin{equation*}  
+    E_{\hslash} = \frac{\mathbf{k}[x,y] \lBrack \hslash \rBrack}{  \mathbf{k}[x,y] \lBrack \hslash \rBrack (H - \hslash J)  } ,
+    \end{equation*}
+    \(J \in \mathbf{k}\lBrack\hslash\rBrack\). 
+    
+    \( E_{\hslash}\) isomorphic to operators.
+    
+\end{frame}    
+
+\begin{frame}{Space on which operators act}
+    Also consider the dual  \( \mathbf{k}[x,y] \lBrack \hslash \rBrack\)-module:
+    \begin{equation*} 
+    E_{\hslash}^{*} = \mathrm{Hom} \left(E_{\hslash}, \mathbf{k}[x,y] \lBrack \hslash \rBrack \right),
+    \end{equation*}
+    which represents solutions to the equation \( (H - \hslash J) \star w =0\), for \( w \in  E_{\hslash}^{*}\).
+    
+    However, we often examine solutions in a formal neighbourhood, using a Weyl-algebra representation, and doing WKB.
+\end{frame}
+
+\begin{frame}{Weyl algebra representation}
+    \[\varphi: \mathbf{k}[x,y]\lBrack \hslash \rBrack \rightarrow \mathbf{k}[x,\hslash \frac{\partial}{\partial x}]\lBrack \hslash \rBrack\]
+    Non-commutative product (but series in \(\hslash\)) mapped isomorphically to non-commutative product of operators.
+    \[  \varphi(H)  = - \hslash\frac{ \partial}{\partial x} +  x^2 + 2  \hslash\, x \, \frac{ \partial }{\partial x} + \hslash^2  \frac{\partial^2}{\partial x^2} + \hslash. \]
+    Star product equation:
+    \[ \varphi((H-\hslash J) \star w) = (\varphi(H)- \hslash J) \psi_{\mathbb{L}} = 0\]
+\end{frame}
+
+\begin{frame}
+\[
+    \left( - \hslash \frac{\partial }{\partial x} +  x^2 + 2  \hslash\, x \frac{ \partial }{\partial x}+ \hslash^2  \frac{\partial^2 }{\partial x^2}  + \hslash - \hslash J\right) \psi_{\mathbb{L}}(x)  = 0, \]
+\end{frame}
+
+\begin{frame}{WKB}
+    Suppose \(J=1\), solve with WKB method:
+    \[ \psi_{\mathbb{L}} = \exp \left( \frac{1}{\hslash} S_0 + S_1 + \hslash S_2 + \dots \right) \]
+    Find:
+    \[ S_0(x) = \int dx\, u_0(x), \quad S_1(x) = \int dx\, u_1(x),\]
+    where  \(u_0(x)\) is from before:
+    \begin{align*}
+        u_0(x) &=  x^2 + 2 x^3 + 5 x^4 + \dots\\
+        u_1(x) &= 2 \, x + 10 \, x^2 + \cdots + \left(4^n - \frac{(2n)!}{(n!)^2}\right) x^n + \cdots 
+    \end{align*}
+    \( u_1(x) \) counts genus-1 Feynmann diagrams.
+\end{frame}
+
+
+\begin{frame}{Deformed trees}
+    Tree to multigraph
+    \begin{center}
+    \begin{tabular}{c  c  } 
+    
+    
+    \tikz [ baseline=(a.base), tree layout, significant sep=1em, grow'=up, sibling distance=7mm, level distance=7mm]
+    \graph {
+        [nodes={circle, draw, inner sep=0pt, minimum size=2mm, fill, as=}]{a -- b };
+        // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{b -- c };
+        // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{c -- b};
+        // [nodes={circle, fill }]{c-- d};
+    };
+    
+    &
+    \tikz [ baseline=(a.base),  tree layout, significant sep=1em, grow'=up, sibling distance=7mm, level distance=7mm]
+    \graph {
+        [nodes={circle, draw, inner sep=0pt, minimum size=2mm, as=, fill}]{a-- b };
+        // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{b -- c };
+        // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{c -- b };
+        // [nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{c -- d };
+        // [nodes={circle, fill }]{d --{e,f}};
+        };
+    \quad 
+    \tikz [ baseline=(a.base), tree layout, significant sep=1em, grow'=up, sibling distance=7mm, level distance=7mm]
+    \graph {
+        %[nodes={circle, draw, inner sep=0pt, minimum size=2mm, as =,}]{ a};
+        [nodes={circle, draw, inner sep=0pt, minimum size=2mm, fill, as=}]{a -- b -- c };
+        // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{d -- c };
+        // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{c -- d };
+        // [nodes={circle, fill }]{d --e};
+        // [nodes={circle, fill }]{b --f};
+        };
+    %\tikz [ baseline=(a.base), binary tree layout, significant sep=1em, grow'=up, sibling distance=7mm, level distance=7mm]
+    %\graph {
+    %    [nodes={circle, draw, inner sep=0pt, minimum size=2mm, as =}]{ a};
+    %    // [nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{a -- b -- c -- d};
+    %    // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=0mm, fill, as=}]{ x -- d };
+    %    // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=0mm, fill, as=}]{ d -- x };
+    %    // [nodes={circle, fill={pink} }]{b --f};
+    %    // [nodes={circle, fill={pink} }]{c --e};
+    %};
+
+    \\
+    &   \\ 
+    \(2 \, x\) & \( 10\, x^2\) 
+    \end{tabular}
+    \end{center}
+    \[ u_1(x) = 2 \, x + 10 \, x^2 + \cdots + \left(4^n - \frac{(2n)!}{(n!)^2}\right) x^n + \cdots \]
+
+    Primitives for the directed (multi-) graphs. In graphs corresponding to \(10x^2\), there are \( 10 = (2 * 2*3)-2 \) orientations for the internal degree \(3\) edges. 
+    \end{frame}
+
+    \begin{frame}
+    \begin{center}
+    \tikz [ baseline=(a.base), tree layout, significant sep=1em, grow'=up, sibling distance=9mm, level distance=9mm]
+    \graph {
+        [nodes={circle, fill, draw, inner sep=0pt, minimum size=2mm, as =}]{ a};
+        // [nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{a -- b };
+        // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{b --[pink] c };
+        // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{c -- b };
+        // [nodes={circle, fill }]{c-- d};
+    };
+    \quad 
+    \tikz [ baseline=(a.base), tree layout, significant sep=1em, grow'=up, sibling distance=9mm, level distance=9mm]
+    \graph {
+        [nodes={circle, fill, draw, inner sep=0pt, minimum size=2mm, as =}]{ a};
+        // [nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{a -- {b} };
+        // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{b --[pink] c };
+        // [simple necklace layout, necklace routing, edges={>={Stealth[round,sep,bend]}}, nodes={circle, inner sep=0pt, minimum size=2mm, fill, as=}]{c --[pink] b };
+        // [nodes={circle, fill }]{c-- d};
+    };
+    \end{center}
+    Eg, both edges with the same orientation, or different.
+    \end{frame}
+    
+    \begin{frame}
+    Can label all these graphs. 
+    
+    Choose an orientation on an edge.
+    
+    Orientations of edge determine the label of a vertex in terms of \(a,b,c\).
+    
+    This also generalises to arbitrary dimensions.
+    
+    Note this is all on formal neighbourhood of \(0\).
+    \end{frame}
+
+    
+    
+    \begin{frame}{Upcoming}
+    When we go to infinite dimensions, graphs a skeleton for the \( \omega_{g,n}\).    
+    
+    \( \omega_{g,n}\) a weighted sum of graphs (which are represented by tensors).
+    \end{frame}
+    
+    

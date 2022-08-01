@@ -1,0 +1,253 @@
+     \frame{\sectionpage}
+     
+    \begin{frame}{Reminder: What are Airy structures for?}
+    Natural explanation for the topological recursion relations.   
+    
+    However, definition of Airy structure works in arbitrary dimension, not just infinite dimensional case for topological recursion.
+    \end{frame}
+ 
+     
+    \begin{frame}
+    As before: 
+    
+    Let \(V\) be vector space (in infinite dimensions discrete with topology), coordinates \(\mathcal{B}_V^{*}= \{y_1, y_2, \dots \}\).
+    
+    Let \(V^* = L\), coordinates \(\mathcal{B}_L^* =  \{x^1, x^2, \dots \}\)
+    
+    Consider \(W = V \oplus V^{*}\) and ring
+    \[  \mathbf{k}[\mathcal{B}_L^*] \otimes_{\mathbf{k}} \mathbf{k} [\mathcal{B}_V^*] \cong \mathbf{k}[\mathcal{B}^*] \cong Sym(W) \]
+    
+    Note in finite dimensions this is just \( \mathbf{k}[x^1, \dots x^n, y_1, \dots y_n]\).
+    \end{frame}
+
+    
+    
+    \begin{frame}{Airy structures}
+        
+    
+        An Airy structure is a choice of tensors \( a_{ijk}, b_{ij}^k, c_i^{jk}\) encoding a Lagrangian subvariety \(\mathbb{L}\).        
+       
+        Let         
+        \[ H_i = -y_i +  a_{ijk} x^j x^k + 2 b_{ij}^k x^j y_k + c_i^{jk} y_j y_k, \]
+        coefficients \((a,b,c)\) chosen so \( H_i  \) form ideal closed under Poisson bracket
+        \[ \{ H_i , H_j \} = g_{ij}^k H_k. \]
+        
+        Note definition works in arbitrary dimensions.
+        %The \( g_{ij}^k \) give structure constants for a Lie algebra \( \mathfrak{g} \cong V^{*} \simeq L= T_0 \mathbb{L}\).
+    \end{frame}
+    
+    \begin{frame}{Definition} 
+    Requirement of closure gives constraints:
+    \begin{defn}[Airy structure] An Airy structure is a collection of tensors \( (a_{ijk},b_{ij}^k,c_i^{jk})\) satisfying the constraints:
+    \begin{align*}
+       2 \left(  b_{ji}^k - b_{ij}^k \right) &= g_{ij}^k,\\
+       4\left( a_{jks} b_{it}^k -  a_{iks} b_{jt}^k \right) &=  g_{ij}^k  a_{kst}, \\
+       2\left(  a_{jks} c_i^{k t} -  a_{ik s} c_j^{k t} +  b_{is}^k b_{jk}^t  -  b_{ik}^t b_{js}^k \right) & =  g_{ij}^k b_{ ks}^t, \\ 
+       2 \left( b_{jk}^s c_i^{kt}  - b_{ik}^s c_j^{kt}+b_{jk}^t c_i^{ks}  - b_{ik}^t c_j^{ks}\right) &= g_{ij}^k c_k^{st}.
+    \end{align*}
+    \end{defn} 
+    
+    \end{frame}
+
+    \begin{frame}
+    Note in infinite dimenions require finiteness.
+    \end{frame}
+
+    \begin{frame}{Airy structures for topological recursion}
+        Kontsevich and Soibelman require as input
+        \begin{itemize}
+            \item  Topological vector space \(V\), discrete topology, over field \(\mathbf{k}\) (also with discrete topology).
+            \item Continuous dual, \(V^* \subseteq \text{Hom}(V, \mathbf{k}) \) (continuous linear maps).
+            \item \(V^*\) linearly compact.
+            \item Require \(V \simeq (V^*)^*\)
+        \end{itemize}
+        Build the Tate space \(W = V \oplus V^*\).
+    \end{frame}
+
+    \begin{frame}{Reminder: Why discrete?}
+    Needed when moving to infinite dimensions.
+        \begin{itemize}
+            \item Finiteness - contraction of tensors, no divergent sums.
+            \item Darboux coordinates
+            \item Strong symplectic structure/ Poisson bracket
+        \end{itemize}
+    
+    \end{frame}
+
+
+
+    \begin{frame}{Formal completion of the Lagrangian}
+        Formal completion at a maximal ideal \( \langle x^{\sbt}, y_{\sbt} \rangle \).
+        
+        Solve \(H_i = 0\) for \(y_i \) in terms of \(x^{\sbt}\), so \(y_i -u_{0,i}(x^{\sbt}) = 0\).
+        
+        Proceed via fixed point iteration:
+        \begin{align*} 
+        u^{(0)}_{0;i} &=  a_{ijk} x^j x^k \\
+        u^{(n)}_{0;i} &=  a_{ijk} x^j x^k + 2 b_{ij}^k x^j u^{(n-1)}_{0;k} + c_i^{jk } u_{0;j}^{(n-1)} u_{0;k}^{(n-1)}
+        \end{align*}
+        \[ u_0 = \lim_{n \rightarrow \infty} u_0^{(n)}(x) \]
+        gives formal series
+        \[ u_{0;i} = a_{ijk} x^j x^k + 2 b_{ij}^k a_{krs} x^j x^r x^s + \dots\]
+    \end{frame}
+    
+    
+    \begin{frame}{Contrast for a moment}
+    Back to the example of the conic, we found the series:
+    \[   u_{0} = a \,x^2 + 2 \,b  \, a\, x^3 + \dots\]
+    (forgotten all the dimensions)
+    \end{frame}
+
+    
+    
+    \begin{frame}
+    Coefficients of \( x^{\sbt}\) determine tensors. In infinite dimensional case, these tensors will correspond to \( \omega_{0,n}\).
+    
+    In infinite dimensional example, although \( \mathbb{L}\) might be topologically a point, in the formal neighbourhood interesting data.
+    \end{frame}
+            
+    
+
+    
+        
+    \begin{frame}{Finiteness in the \(a_{ijk}\)}
+    In infinite dimensions, \(a_{ijk}\) pairs with \(x^i\). Only allowed finite sums of \(x^i\). \(a_{ijk}\) is zero except for finitely many indices.
+    \end{frame}    
+
+    \begin{frame}{Quantum Airy structures}
+    Apply deformation quantisation  to 
+    \[ \mathcal{O}(W) = \mathbf{k}[ x^{\sbt}, y_{\sbt} ],\] 
+    which means 
+    \[   \mathcal{O}(W)  \rightarrow ( \mathcal{O}(W) \lBrack \hslash \rBrack , \star) \]
+    such that \( \star\) recovers Poisson bracket.
+    
+    Moyal product \( \star\) 
+    \[  f \star g = f \cdot g + \frac{1}{2} \hslash \, \pi^{ij} \frac{\partial f}{\partial x_i} \cdot  \frac{\partial g}{\partial x_j} + \frac{\hslash^2}{4} \pi^{ij} \pi^{kl}\frac{\partial f}{\partial x_i \partial x_k} \cdot \frac{\partial g}{\partial  x_j \partial x_l} + \mathcal{O}(\hslash^3),\] 
+    \end{frame}
+    
+    \begin{frame}
+    Some example terms:
+    \begin{align*}
+         x^i \star x^j &= x^i x^j \\
+         x^i \star y_j &= x^i y_j - \frac{\hslash}{2} \delta_{j}^i\\ 
+         y_j \star x^i &= x^i y_j + \frac{\hslash}{2} \delta_{j}^i \\ 
+         y_i \star y_j &= y_i y_j
+    \end{align*}
+    Note:  terms like \(x^i y_j\) are a new function in \(\mathcal{O}(W)\lBrack \hslash \rBrack\), not a product! 
+
+    \end{frame}
+
+
+
+    \begin{frame}{Quantisation of the Lagrangian}
+    Also consider what happens to
+    \[ \mathcal{O}(\mathbb{L}) = \frac{ \mathbf{k}[ x^{\sbt}, y_{\sbt} ]}{\langle a_{ijk} x^j x^k + 2 b_{ij}^k x^j y_k + c_i^{jk} y_j y_k - y_i \rangle }.\] 
+    There are many quantisations of the form 
+    \[  E_{\hslash} = \frac{ \mathbf{k}[ x^{\sbt}, y_{\sbt} ] \lBrack \hslash \rBrack }{\langle a_{ijk} x^j x^k + 2 b_{ij}^k x^j y_k + c_i^{jk} y_j y_k - y_i + \hslash J \rangle }\]
+    where \(J\) is some series in \(\hslash\). Under quotient by \(\hslash\) these restrict to \( \mathcal{O}( \mathbb{L})\),
+    \[ 0 \rightarrow \hslash E_{\hslash} \rightarrow E_{\hslash} \rightarrow \mathcal{O}( \mathbb{L}) \rightarrow 0 \]
+    This quantisation has just given operators on \( \mathbb{L}\)
+    \end{frame}
+
+
+    \begin{frame}{Representations}
+        Pick a representation of the Moyal product into a Weyl algebra \( \mathbf{k} \lBrack x^{\sbt}, \hslash \frac{\partial}{\partial x_i} \rBrack \lBrack \hslash \rBrack \).
+        \begin{align*}
+        x^i & \rightarrow x^i \\
+         y_i & \rightarrow \hslash \frac{\partial}{\partial x_i} \\
+         x^i \star x^j & \rightarrow x^i x^j  \\
+         y_i \star y_j & \rightarrow \hslash \frac{\partial^2 }{\partial x_i x_j} \\
+         x^i \star y_j &\rightarrow x^i \hslash \frac{ \partial}{\partial x_j}
+        \end{align*}
+    \end{frame}
+    
+    \begin{frame}{Dual modules}
+    We aren't just interested in operators on \( \mathbb{L}\), we want a space on which they act.
+    \[ \mathrm{Hom} ( E_{\hslash}, \mathcal{O}(W)\lBrack \hslash \rBrack)\] 
+    represents 
+    \[ (H_i - \hslash \,J) \star w = 0\]
+    \end{frame}
+    
+
+
+
+    \begin{frame}
+    Under the representation to the Weyl-algebra, the star-product equation 
+    \[ H_j \star w = 0 \]
+    becomes an operator equation
+    \[ \widehat{H}_j\, \psi_{\mathbb{L}}  = 0\]
+    Note: terms like \(x^i y_j\) are a function in \(\mathcal{O}(W)\lBrack \hslash \rBrack\), not a product! Need to use the definition of Moyal product to find the map to operators.
+    \[  x^i \star y_j = x^i y_j - \frac{\hslash}{2} \delta_{j}^i \]
+    so 
+    \[ x^i y_j = x^i \star y_j  +\frac{\hslash}{2} \delta_{j}^i\]
+    which then can be mapped.
+    
+    \end{frame}
+    
+    \begin{frame}
+    Now we get what is normally considered quantisation:
+    \begin{align*}
+     H_i(x^{\sbt},y_{\sbt}) &\rightarrow \,: H_i \left( x^{\sbt} , \hslash \frac{\partial}{\partial x_{\sbt}} \right) : + \hslash \varepsilon_i = \widehat{H}_i\\
+         [\widehat{H}_i , \widehat{H}_j ] &= \{ H_i , H_j \} +\hslash g_{ij}^k \varepsilon_k
+    \end{align*}
+    \end{frame}
+
+
+   
+    
+    \begin{frame}{Abstract topological recursion}
+        Looking for a wavefunction \( \psi \) such that
+        \[ \widehat{H}_j \psi = 0\]
+        where 
+        \[\psi = \exp \left( S \right) \]
+        and WKB expansion of \(S\)
+        \[ S=\frac{1}{\hslash} S_0 + \sum_{g>1} \hslash^{\,g-1} S_g\]
+        Note \( S_{g,n;i} = \partial_i S_{g,n}\) (chop off an \(x\) leg).
+    \end{frame}
+    
+    \begin{frame}{Recall}
+    Wavefunction is looking for a dual module on formal completion. 
+    \end{frame}
+    
+
+    \begin{frame}{Abstract topological recursion}
+        \(S\) satisfies \emph{abstract topological recursion}. (Ordinary topological recursion is a specialisation). Compute \(H_j \psi = 0\):
+        \begin{align*}
+            & a_{ijk} x^j x^k + \sum_g \bigg( 2 \hslash b_{ik}^{j} \sum_n  S_{g,n;j} x^k + \\
+            &\hslash^2 c_i^{jk}  \left(\sum_n S_{g,n;j,k} + \sum_n S_{g,n;j} S_{g,n;k} \right) - \hslash S_{g,n;i} + \hslash \epsilon_i \bigg)  = 0
+        \end{align*}
+        Gather like \(g\) terms \trightarrow{}
+    \end{frame}
+
+    \begin{frame}{}
+    \begin{defn}[Abstract topological recursion]
+    \begin{align*}
+        S_{g,n;i,i_1,\dots,i_{n-1}} =&  \, c^{jk}_i S_{g-1,n+1;j,k,i_1, \dots i_{n-1}} \\
+        &+ \sum_{\substack{g_1 + g_2 = g \\ I_1 \sqcup I_2 = \{1, \dots, n-1\}} } c^{jk}_i S_{g_1, \# I_1 + 1; j}\, S_{g_2, \# I_2+1;k}  \\    
+        &+ 2 \sum_{\alpha = 1 }^{n-1} b^k_{i \, i_\alpha} S_{g,n-1;k i_{\{1,\dots n-1\}}/\{\alpha\}}  \\ 
+        & 
+    \end{align*}
+    \end{defn}
+    Sum of \(g-1\) and \(g_1+g_2 = g\) terms like topological recursion.
+    \end{frame}
+
+    \begin{frame}{}
+    \(S_{g,n}\) composed of \(a_{ijk},b_{ij}^k, c_{i}^{jk}\) and \(x\).
+    \begin{ex}
+    \[ S_{0,3} = S_{0,3;i,j,k}x^i x^j x^k = \frac{1}{3!} a_{ijk}x^i x^j x^k , \quad S_{1,1} = b_{ij}^j x^i + \dots  \]
+    \end{ex}
+    \end{frame}
+    
+    
+    
+    \begin{frame}{}
+    \Large \[ S_{g,n} \rightarrow \omega_{g,n}\]
+    \end{frame}
+    
+    \begin{frame}
+    \[S_{0,3} = \frac{1}{3!} a_{ijk} x^i x^j x^k \cong S_{0,3;i,j,k} x^i \otimes x^j \otimes x^k = \omega_{0,3} \] 
+    and \(S_{1,1}\) are initial data for topological recursion.        
+    \end{frame}
+
+    
+    

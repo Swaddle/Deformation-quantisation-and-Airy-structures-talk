@@ -1,0 +1,138 @@
+    \frame{\sectionpage}
+
+    \begin{frame}{Symplectic reduction of wavefunctions}
+    Study deformation quantisation of \(X\),
+    
+    Consider the intersection and look for a wavefunction associated to \(\mathcal{O}_{G \cap {\mathbb{L}}} \).
+    
+    Want to check if this agrees with the formula for the wavefunction:
+    \begin{thm}[Reduction of wavefunctions]
+    \[ \psi_{\mathcal{B}} = \int \psi_G \, \psi_{\mathbb{L}} \]
+    \end{thm}
+    \end{frame}
+    
+    \begin{frame}{Goal}
+        Verify the two possible wavefunctions agree:
+    \end{frame}
+    
+    \begin{frame}{An example}
+    \begin{ex}    
+    \[ \mathcal{O}(W) =   \mathbf{k}[x_1,x_2,y_1,y_2].\] 
+    Poisson bracket: 
+    \(\{x_i,x_j\}=\{y_i,y_j\}=0, \; \{x_i,y_i\}=1 \). 
+    Linear Lagrangian defined by the ideal \(I(\mathbb{L}) = \langle H_1, H_2\rangle\), where:
+    \begin{align*}
+        H_1 = y_1 + A x_1 +  B x_2,    \\
+        H_2 = y_2 +  C x_1 + D x_2. 
+    \end{align*}
+    Need \(B=C\) for coisotropic.
+    
+    Let \(G\) be determined by the equation:
+    \[ I(G) = \langle H_G =a x_1 + b x_2 + c y_1 + d y_2 \rangle.\]
+    \end{ex}
+    \end{frame} 
+
+    \begin{frame}
+    Transversality is given by requiring at least one of following terms to be non zero:
+    \begin{align}
+    \label{eqn:transcons2dmin}
+    a - cA - dB, \\ 
+    b - cB-dD.
+    \end{align}
+    \end{frame}
+    
+    \begin{frame}
+    
+    \(G\) is codimension \(n-g=1\), the extension \(X = W\oplus G/G^{\perp}\) necessarily must have dimension \(6\). 
+    Let \[ \mathcal{O}(X) = \mathbf{k}[x_1,x_2,z_1, y_1,y_2,w_1].\] 
+    Poisson bracket on \(\mathcal{O}(X)\) 
+    \[ \{x_i,y_i\}=\{z_1,w_1\} = 1\]
+    Fibre product represented by a map
+    \begin{equation} 
+    \label{eqn:extgmaprings}
+    \mathbf{k}[x_1,x_2,z_1,y_1,y_2,w_1] \rightarrow \mathbf{k}[x_1,x_2,y_1,y_2],
+    \end{equation}
+    such that the preimage of \(G\) in \(X\), is a linear Lagrangian. 
+    \end{frame}
+    
+    
+    \begin{frame}
+    
+    There is an ideal \(I(G_{Ext})\) in \(\mathcal{O}(X)\) involutive under the Poisson bracket. The map (\ref{eqn:extgmaprings}) is constructed on the generators. First 
+    \( x_i  \rightarrow x_i ,
+    y_i  \rightarrow y_i\).
+    
+    Then finding \(G_{Ext}\) as a Lagrangian in \(X\), requires finding two additional linear functions \(\zeta\), and \(\xi\):
+    \begin{align}
+    \label{eqn:solveforext}
+    z_1 &= \zeta_1(x_{\sbt},y_{\sbt}), \\
+    w_1 &= \xi_1(x_{\sbt},y_{\sbt}),
+    \end{align}
+    One choice is 
+    \[\zeta_1 = a x_1 + c y_1, \quad  \text{and} \quad  \xi_1 = \frac{1}{cd} \left( d x_1 - c x_2 \right) .\]
+    
+    \end{frame}
+    
+    
+    \begin{frame} \(\psi_G(x_1,x_2,z_1)\) (associated with \(G_{Ext}\) satisfies the equations: 
+    \begin{align*}
+       (a x_1 + b x_2) \psi_G + \hslash \left( c \frac{\partial}{\partial x_1 } +  d \frac{\partial}{\partial x_2} \right) \psi_G & = 0, \\
+       ( z_1 - a x_1 ) \psi_G  - c \hslash \frac{\partial}{\partial x_1} \psi_G &= 0, \\ 
+       \hslash \frac{\partial}{\partial z_1} \psi_G - \frac{1}{c d} ( d x_1 - c x_2) \psi_G &= 0.
+    \end{align*}
+    
+    \end{frame}
+    
+    
+    \begin{frame}
+    Looking for a solution of the form:
+    \[ \psi_G = C \,\exp\left( -\frac{1}{2} x \cdot K \cdot x  + J  \cdot x\right),\]
+    Gives
+    \begin{align*}
+        K = \frac{1}{\hslash} \left(\begin{array}{cc}
+            a/c & 0 \\
+            0 & b/d
+        \end{array}\right), \quad J = \frac{1}{\hslash} \,  z_1 \left( \begin{array}{c}
+            1/c \\
+            -1/d
+        \end{array}\right).
+    \end{align*}
+    Similar solution for \( \psi_{\mathbb{L}}\):
+    \begin{align*}
+        \psi_{\mathbb{L}} =  C' \, \exp \left( -\frac{1}{2}   x \cdot Q \cdot  x \right),
+    \end{align*}
+    where 
+    \[ Q = - \frac{1}{\hslash} \left( \begin{array}{cc}
+        A  &  B \\
+        B & D  
+    \end{array}\right),\]
+    \end{frame}
+    
+    \begin{frame}{Finally perform the integral}
+    Fourier like integral 
+         \begin{align*} 
+         \psi_{\mathcal{B}} &= \int Dx \, \psi_{\mathbb{L}} \psi_{G}  \\
+         &= \text{const} \, \exp \left( \frac12\, J\cdot (K+Q)^{-1} \cdot J \right) \\
+         & = \text{const}\, \exp\left( -\frac{1}{2 \hslash}\, c_0\, z_1^2\right),
+    \end{align*}
+    \[ c_0 = \frac{\left(a c-A c^2+d (b-2 B c-d D)\right)}{ c d  \left(a (b-d D)-c \left(A (b-d D)+B^2 d\right)\right)}.\]
+    Integral fails precisely when \(G\) and \( \mathbb{L}\) intersect non-transversally.
+    \end{frame}
+    
+    \begin{frame}{The check}
+    Take equations for \(G\), \(\mathbb{L}\) in \(X\) and eliminate \(x_{\sbt}\) and \( y_{\sbt}\):
+    \begin{equation}
+        \label{eqn:check1}
+        w_1 = c_1 z_1,
+    \end{equation}
+    Algebraically, represents the sum of the ideals of \(G\) and \( \mathbb{L}\), per fibre product. Note that \[c_1 = -c_0.\]  
+    Can quantise, look for dual module, find equation:
+    \[ \hslash \frac{\partial}{\partial z_1} \psi = c_1 z_1 \psi. \]
+    This equation has a solution of the form:
+    \[ \psi =  \mathrm{const} \, \exp\left( \frac{1}{2 \hslash} c_1 z_1^2 \right) = \text{const}\, \exp\left( -\frac{1}{2 \hslash}\, c_0\, z_1^2\right).\]
+    
+    \end{frame}
+    
+    \begin{frame}
+        This verifies the integral formula in a simple case. 
+    \end{frame}
