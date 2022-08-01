@@ -13,5 +13,5 @@ jobs:
           latexmk_use_lualatex: true
       - uses: actions/upload-artifact@v2
         with:
-          name: presentation
-          path: presentation.pdf
+          name: main
+          path: main.pdf
